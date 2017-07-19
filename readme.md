@@ -9,7 +9,7 @@ Untuk back-end akan digunakan Laravel, sedangkan untuk front-end akan digunakan 
 - [x] Membuat Repository
 - [x] Membuat Readme pertama dan Gitignore
 - [x] Menentukan Framework
-- [ ] Membuat desain front-end
+- [x] Membuat desain front-end
 - [ ] Implementasi front-end
 - [ ] Implementasi back-end
 - [ ] Pembuatan unittest
