@@ -15,6 +15,15 @@ class StudioController extends Controller
         ];
         return response ()->json($response,200);
     }
+
+    public function getBasedOnName($nama) {
+
+        $studios = Studio::where('nama', '=', $nama)->get();
+        $response = [
+            "list" => $studios
+        ];
+        return response ()->json($response,200);
+    }
     /**
      * Display a listing of the resource.
      *

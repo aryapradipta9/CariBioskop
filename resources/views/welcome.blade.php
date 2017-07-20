@@ -28,10 +28,12 @@
         <h2>Laravel and Angular Single Page Application</h2>
         <h4>Commenting System</h4>
     </div>
+    <!--<input type="text" ngModel="searchBox">
     <!-- THE COMMENTS =============================================== -->
     <!-- hide these comments if the loading variable is true -->
     <div class="studiox" ng-hide="loading" ng-repeat="studioy in studio">
-        <h3>Studio [[ studioy.nama ]]</h3>
+        <h3>Studio [[ studioy.nama ]]</h3> dengan sisa kursi <h3> [[studioy.sisa_kapasitas]] </h3>
+        <p><a href="#" ng-click="getBasedOnName(studioy.nama)" class="text-muted">Lihat</a></p>
     </div>
 
 </div>

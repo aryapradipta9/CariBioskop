@@ -16,3 +16,7 @@ use Illuminate\Http\Request;
 Route::get('/studio',[
     'uses' => 'StudioController@getStudio'
     ]);
+
+Route::get('/studios/{nama}',[
+    'uses' => 'StudioController@getBasedOnName'
+]);
