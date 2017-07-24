@@ -12,6 +12,14 @@ class BioskopController extends Controller
      *
      * @return Response
      */
+
+    public function getBioskop() {
+        $bioskop = Bioskop::all();
+        $response = [
+            "list" => $bioskop
+        ];
+        return response ()->json($response,200);
+    }
     public function index()
     {
         return Response::json(Bioskop::get());

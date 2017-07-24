@@ -14,6 +14,14 @@ app.config(function ($interpolateProvider) {
 
         // loading variable to show the spinning loading icon
         $scope.loading = true;
+        var bio;
+        bio = $http({
+            method: 'GET',
+            url: 'api/bioskop'
+        }).then(function (response) {
+            console.log(response);
+            $scope.bioskop = response.data.list;
+        })
         var temp;
         //http.ajax($scope.url, {url: $scope.urlInput.valueOf()}
         temp = $http({

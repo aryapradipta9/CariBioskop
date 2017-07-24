@@ -20,3 +20,11 @@ Route::get('/studio',[
 Route::get('/studios/{nama}',[
     'uses' => 'StudioController@getBasedOnName'
 ]);
+
+Route::get('/judul/{judul}',[
+    'uses' => 'StudioController@getBasedOnJudul'
+]);
+
+Route::get('/bioskop',[
+    'uses' => 'BioskopController@getBioskop'
+]);

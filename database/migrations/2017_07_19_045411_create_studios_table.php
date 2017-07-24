@@ -18,7 +18,8 @@ class CreateStudiosTable extends Migration
             $table->string('nama');
             $table->integer('nomor_studio');
             $table->integer('sisa_kapasitas');
-            $table->timestamps();
+            $table->string('judul');
+            $table->integer('waktu');
         });
     }
 

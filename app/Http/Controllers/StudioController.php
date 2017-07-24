@@ -24,6 +24,14 @@ class StudioController extends Controller
         ];
         return response ()->json($response,200);
     }
+
+    public function getBasedOnJudul($judul) {
+        $studios = Studio::where('judul', '=', $judul)->get();
+        $response = [
+            "list" => $studios
+        ];
+        return response ()->json($response,200);
+    }
     /**
      * Display a listing of the resource.
      *
