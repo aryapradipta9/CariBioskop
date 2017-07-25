@@ -25,6 +25,10 @@ Route::get('/judul/{judul}',[
     'uses' => 'StudioController@getBasedOnJudul'
 ]);
 
+Route::get('/movies',[
+    'uses' => 'MovieController@getMovies'
+]);
+
 Route::get('/bioskop',[
     'uses' => 'BioskopController@getBioskop'
 ]);

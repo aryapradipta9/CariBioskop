@@ -21,7 +21,15 @@ app.config(function ($interpolateProvider) {
         }).then(function (response) {
             console.log(response);
             $scope.bioskop = response.data.list;
-        })
+        });
+        var mov;
+        mov = $http({
+            method: 'GET',
+            url: 'api/movies'
+        }).then(function (response) {
+            console.log(response);
+            $scope.movie = response.data.list;
+        });
         var temp;
         //http.ajax($scope.url, {url: $scope.urlInput.valueOf()}
         temp = $http({
@@ -46,4 +54,16 @@ app.config(function ($interpolateProvider) {
                 $scope.loading = false;
             });
         };
+        $scope.getBasedOnJudul = function(nama) {
+            // use the function we created in our service
+            temp = $http({
+                method: 'GET',
+                url: "api/judul/" + nama
+            }).then(function (response) {
+                console.log(response);
+                $scope.studio = response.data.list;
+                $scope.loading = false;
+            });
+        };
+
     });
