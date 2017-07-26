@@ -1,6 +1,6 @@
 # CariBioskop
 ## Deskripsi
-CariBioskop merupakan single page application (SPA) yang dapat menampilkan film yang tersedia di daerah tertentu dan menamplikan layout bioskop serta lokasi kursi yang kosong.
+CariBioskop merupakan single page application (SPA) yang dapat menampilkan film yang tersedia di daerah tertentu dan menamplikan jumlah kursi yang kosong.
 
 ## Framework
 Untuk back-end akan digunakan Laravel, sedangkan untuk front-end akan digunakan Angular.js
@@ -12,4 +12,4 @@ Untuk back-end akan digunakan Laravel, sedangkan untuk front-end akan digunakan 
 - [x] Membuat desain front-end
 - [x] Implementasi front-end
 - [x] Implementasi back-end
-- [ ] Pembuatan unittest
+- [x] Pembuatan unittest

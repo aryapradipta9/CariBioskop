@@ -11,8 +11,9 @@
 
     <!-- JS -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.8/angular.min.js"></script> <!-- load angular -->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.8/angular.js"></script> <!-- load angular -->
 
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.8/angular-route.js"></script>
     <!-- ANGULAR -->
     <!-- all angular resources will be loaded from the /public folder -->
     <script src="js/controller/studioController.js"></script> <!-- load our controller -->
@@ -37,23 +38,27 @@
         </nav>
     </header>
     <!-- PAGE TITLE =============================================== -->
+    <div id="main">
 
+        <!-- angular templating -->
+        <!-- this is where content will be injected -->
+        <div ng-view></div>
+
+    </div>
     <p> Pilih bioskop </p>
-    <select ng-model="selectedBioskop">
+    <select ng-model="selectedBioskop" ng-change="getBasedOnName()">
         <option ng-repeat="x in bioskop" value="[[x.nama_bioskop]]">
             [[x.nama_bioskop]]
         </option>
 
     </select>
-    <p><a href="#" ng-click="getBasedOnName([[selectedBioskop]])" class="text-muted">[[ selectedBioskop ]]</a></p>
     <p> Atau pilih film</p>
-    <select ng-model="selectedMovie">
+    <select ng-model="selectedMovie" ng-change="getBasedOnJudul()">
         <option ng-repeat="x in movie" value="[[x.judul]]">
             [[x.judul]]
         </option>
 
     </select>
-    <p><a href="#" ng-click="getBasedOnJudul([[selectedMovie]])" class="text-muted">[[ selectedMovie ]]</a></p>
     <!--<input type="text" ngModel="searchBox">
     <!-- THE COMMENTS =============================================== -->
     <!-- hide these comments if the loading variable is true -->
@@ -61,7 +66,6 @@
         <h3>Studio [[studioy.nomor_studio]] [[ studioy.nama ]]</h3> film [[studioy.judul]] jam [[studioy.waktu]] dengan sisa kursi <h3> [[studioy.sisa_kapasitas]] </h3>
 
     </div>
-
 </div>
 </body>
 </html>
