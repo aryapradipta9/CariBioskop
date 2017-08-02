@@ -8,21 +8,22 @@ app.config(function ($interpolateProvider) {
     $interpolateProvider.endSymbol(']]');
 });
 
-/*app.config(function($routeProvider) {
+app.config(function($routeProvider) {
     $routeProvider
 
     // route for the home page
         .when('/', {
-            templateUrl : 'home.html',
+            templateUrl : 'home',
             controller  : 'studioController'
         })
 
         // route for the about page
         .when('/list', {
-            templateUrl : 'pages/list.html',
+            templateUrl : 'list',
             controller  : 'listController'
+
         })
-});*/
+});
 // inject the Comment service into our controller
     app.controller('studioController', function($scope, $http) {
         // object to hold all the data for the new comment form
@@ -83,3 +84,14 @@ app.config(function ($interpolateProvider) {
         };
 
     });
+
+app.controller('listController', function($scope, $http) {
+    var bio;
+    bio = $http({
+        method: 'GET',
+        url: 'api/bioskop'
+    }).then(function (response) {
+        console.log(response);
+        $scope.bioskop = response.data.list;
+    });
+});

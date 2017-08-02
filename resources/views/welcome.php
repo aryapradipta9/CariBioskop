@@ -11,7 +11,7 @@
 
     <!-- JS -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.8/angular.js"></script> <!-- load angular -->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.8/angular.min.js"></script> <!-- load angular -->
 
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.8/angular-route.js"></script>
     <!-- ANGULAR -->
@@ -22,7 +22,7 @@
 
 </head>
 <!-- declare our angular app and controller -->
-<body class="container" ng-app="studioApp" ng-controller="studioController"> <div class="col-md-8 col-md-offset-2">
+<body class="container" ng-app="studioApp"> <div class="col-md-8 col-md-offset-2">
     <header>
         <nav class="navbar navbar-default">
             <div class="container">
@@ -32,7 +32,7 @@
 
                 <ul class="nav navbar-nav">
                     <li><a href="#"><i class="fa fa-home"></i>Home</a></li>
-                    <li><a href="#">List Bioskop</a></li>
+                    <li><a href="#list">List Bioskop</a></li>
                 </ul>
             </div>
         </nav>
@@ -45,27 +45,7 @@
         <div ng-view></div>
 
     </div>
-    <p> Pilih bioskop </p>
-    <select ng-model="selectedBioskop" ng-change="getBasedOnName()">
-        <option ng-repeat="x in bioskop" value="[[x.nama_bioskop]]">
-            [[x.nama_bioskop]]
-        </option>
 
-    </select>
-    <p> Atau pilih film</p>
-    <select ng-model="selectedMovie" ng-change="getBasedOnJudul()">
-        <option ng-repeat="x in movie" value="[[x.judul]]">
-            [[x.judul]]
-        </option>
-
-    </select>
-    <!--<input type="text" ngModel="searchBox">
-    <!-- THE COMMENTS =============================================== -->
-    <!-- hide these comments if the loading variable is true -->
-    <div class="studiox" ng-hide="loading" ng-repeat="studioy in studio">
-        <h3>Studio [[studioy.nomor_studio]] [[ studioy.nama ]]</h3> film [[studioy.judul]] jam [[studioy.waktu]] dengan sisa kursi <h3> [[studioy.sisa_kapasitas]] </h3>
-
-    </div>
 </div>
 </body>
 </html>
